@@ -158,10 +158,28 @@ df_res = pd.DataFrame({
 
 # Summary Metrics
 col1, col2, col3 = st.columns(3)
+
 with col1:
-    st.metric("Year 5 Benefit", f"${gap_data[4]:,.0f}", 
-              delta="Owner Wins" if gap_data[4] > 0 else "Renter Wins",
-              delta_color="normal" if gap_data[4] > 0 else "inverse")
+    st.metric(
+        "Year 5 Benefit", 
+        f"${gap_data[4]:,.0f}", 
+        delta="Owner Wins" if gap_data[4] > 0 else "Renter Wins",
+        delta_color="normal" if gap_data[4] > 0 else "inverse"
+    )
+
 with col2:
-    st.metric("Year 10 Benefit", f"${gap_data[9]:,.0f}",
+    st.metric(
+        "Year 10 Benefit", 
+        f"${gap_data[9]:,.0f}",
+        delta="Owner Wins" if gap_data[9] > 0 else "Renter Wins",
+        delta_color="normal" if gap_data[9] > 0 else "inverse"
+    )
+
+with col3:
+    st.metric(
+        "Year 15 Benefit", 
+        f"${gap_data[14]:,.0f}",
+        delta="Owner Wins" if gap_data[14] > 0 else "Renter Wins",
+        delta_color="normal" if gap_data[14] > 0 else "inverse"
+    )
               delta="Owner Wins" if gap
